@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MediCare</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-clinic-medical"></i> MediCare</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" class="btn-login active">Login</a></li>
+                    <li><a href="#" class="cart"><i class="fas fa-shopping-cart"></i> <span>0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-form-container">
+                    <div class="tabs">
+                        <div class="tab active" id="login-tab">Login</div>
+                        <div class="tab" id="register-tab">Register</div>
+                    </div>
+                    
+                    <div class="form-container" id="login-form">
+                        <h2>Welcome Back</h2>
+                        <p>Login to access your account and manage your orders</p>
+                        
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <div class="password-field">
+                                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                                    <i class="fas fa-eye toggle-password"></i>
+                                </div>
+                                <span class="error-message" id="password-error"></span>
+                            </div>
+                            
+                            <div class="form-group remember-forgot">
+                                <div class="remember-me">
+                                    <input type="checkbox" id="remember" name="remember">
+                                    <label for="remember">Remember me</label>
+                                </div>
+                                <a href="#" class="forgot-password">Forgot Password?</a>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-auth">Login</button>
+                            
+                            <div class="or-divider">
+                                <span>OR</span>
+                            </div>
+                            
+                            <div class="social-login">
+                                <button type="button" class="btn-social google">
+                                    <i class="fab fa-google"></i> Login with Google
+                                </button>
+                                <button type="button" class="btn-social facebook">
+                                    <i class="fab fa-facebook-f"></i> Login with Facebook
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="form-container hidden" id="register-form">
+                        <h2>Create Account</h2>
+                        <p>Join MediCare for the best healthcare products</p>
+                        
+                        <form id="registerForm">
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                                <span class="error-message" id="fullname-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reg-email">Email</label>
+                                <input type="email" id="reg-email" name="reg-email" placeholder="Enter your email" required>
+                                <span class="error-message" id="reg-email-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                                <span class="error-message" id="phone-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reg-password">Password</label>
+                                <div class="password-field">
+                                    <input type="password" id="reg-password" name="reg-password" placeholder="Create a password" required>
+                                    <i class="fas fa-eye toggle-password"></i>
+                                </div>
+                                <span class="error-message" id="reg-password-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm Password</label>
+                                <div class="password-field">
+                                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                                    <i class="fas fa-eye toggle-password"></i>
+                                </div>
+                                <span class="error-message" id="confirm-password-error"></span>
+                            </div>
+                            
+                            <div class="form-group terms">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+                                <span class="error-message" id="terms-error"></span>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-auth">Register</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="auth-image">
+                    <img src="images/login-image.jpg" alt="Healthcare professionals">
+                    <div class="auth-overlay">
+                        <h3>Your Health, Our Responsibility</h3>
+                        <p>Get access to genuine medicines and healthcare products at your fingertips.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>About MediCare</h3>
+                    <p>MediCare is your trusted partner for all medical needs. We provide genuine medicines and healthcare products at competitive prices.</p>
+                    <div class="social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Medical Street, Health City</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@medicare.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MediCare. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

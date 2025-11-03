@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - MediCare</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .product-details {
+            padding: 80px 0;
+            background-color: var(--bg-color);
+        }
+        
+        .product-details-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .product-image {
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+        }
+        
+        .product-info {
+            padding: 30px;
+        }
+        
+        .product-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-size: 24px;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .product-description {
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .product-meta {
+            margin-bottom: 30px;
+        }
+        
+        .meta-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .meta-label {
+            font-weight: 600;
+            width: 120px;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .quantity-input {
+            width: 60px;
+            height: 40px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .add-to-cart-btn {
+            flex: 1;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .add-to-cart-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .wishlist-btn {
+            width: 50px;
+            height: 50px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .wishlist-btn:hover {
+            background-color: #ffecec;
+            color: var(--accent-color);
+        }
+        
+        .product-tabs {
+            margin-top: 40px;
+        }
+        
+        .tabs-nav {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+        
+        .tab-item {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-item.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px 0;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .related-products {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        @media (max-width: 768px) {
+            .product-details-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-clinic-medical"></i> MediCare</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" class="btn-login">Login</a></li>
+                    <li><a href="#" class="cart"><i class="fas fa-shopping-cart"></i> <span>0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="product-details">
+        <div class="container">
+            <div class="product-details-container">
+                <div class="product-image">
+                    <img src="images/product1.svg" alt="Paracetamol" id="product-main-image">
+                </div>
+                <div class="product-info">
+                    <h1 class="product-title">Paracetamol 500mg</h1>
+                    <p class="product-price">$5.99</p>
+                    <div class="product-description">
+                        <p>Paracetamol is a commonly used over-the-counter pain reliever (analgesic) and fever reducer (antipyretic). It's used to treat many conditions including headache, muscle aches, arthritis, backache, toothaches, colds, and fevers.</p>
+                        <p>This package contains 20 tablets of 500mg each.</p>
+                    </div>
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Availability:</span>
+                            <span class="meta-value">In Stock</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Category:</span>
+                            <span class="meta-value">Pain Relief</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">SKU:</span>
+                            <span class="meta-value">MED-PR-001</span>
+                        </div>
+                    </div>
+                    <div class="quantity-selector">
+                        <div class="quantity-btn decrease">-</div>
+                        <input type="number" class="quantity-input" value="1" min="1" max="10">
+                        <div class="quantity-btn increase">+</div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        <div class="wishlist-btn">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-tabs">
+                <div class="tabs-nav">
+                    <div class="tab-item active" data-tab="description">Description</div>
+                    <div class="tab-item" data-tab="usage">Usage & Dosage</div>
+                    <div class="tab-item" data-tab="reviews">Reviews</div>
+                </div>
+                <div class="tab-content active" id="description">
+                    <h3>Product Description</h3>
+                    <p>Paracetamol is a widely used over-the-counter pain reliever and fever reducer. It's typically used to treat mild to moderate pain and fever.</p>
+                    <p>This medication works by blocking the production of certain natural substances that cause pain and fever. It does not affect the clotting of blood and does not irritate the stomach as much as other pain relievers.</p>
+                    <h4>Key Benefits:</h4>
+                    <ul>
+                        <li>Relieves mild to moderate pain</li>
+                        <li>Reduces fever</li>
+                        <li>Gentle on the stomach</li>
+                        <li>Can be taken with or without food</li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="usage">
+                    <h3>Usage & Dosage</h3>
+                    <p>Take this medication by mouth as directed. Follow all directions on the product package. If you are uncertain about any of the information, consult your doctor or pharmacist.</p>
+                    <p>If you are taking this medication for self-treatment, it is important to read the package instructions carefully before you start using this product to know the correct dose.</p>
+                    <h4>Standard Dosage:</h4>
+                    <ul>
+                        <li>Adults and children 12 years and older: 1-2 tablets every 4-6 hours as needed</li>
+                        <li>Do not take more than 8 tablets in 24 hours</li>
+                        <li>Do not use for more than 10 days unless directed by a doctor</li>
+                    </ul>
+                    <p><strong>Warning:</strong> Taking more than the recommended dose can cause serious harm to your liver. Do not use with other medicines containing paracetamol.</p>
+                </div>
+                <div class="tab-content" id="reviews">
+                    <h3>Customer Reviews</h3>
+                    <div class="review">
+                        <div class="review-header">
+                            <h4>John D.</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-date">Posted on May 15, 2023</p>
+                        <p class="review-text">Works great for my occasional headaches. Fast acting and effective.</p>
+                    </div>
+                    <div class="review">
+                        <div class="review-header">
+                            <h4>Sarah M.</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-date">Posted on April 3, 2023</p>
+                        <p class="review-text">Good quality product. Helps with my fever and body aches during cold season.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-products">
+        <div class="container">
+            <h2 class="section-title">Related Products</h2>
+            <div class="product-container">
+                <div class="product">
+                    <img src="images/product2.svg" alt="Product 2">
+                    <h3>Vitamin C</h3>
+                    <p class="price">$12.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="images/product3.svg" alt="Product 3">
+                    <h3>First Aid Kit</h3>
+                    <p class="price">$24.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="images/product4.svg" alt="Product 4">
+                    <h3>Digital Thermometer</h3>
+                    <p class="price">$15.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>About MediCare</h3>
+                    <p>MediCare is your trusted partner for all medical needs. We provide genuine medicines and healthcare products at competitive prices.</p>
+                    <div class="social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Medical Street, Health City</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@medicare.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MediCare. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Product details page specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Quantity selector functionality
+            const decreaseBtn = document.querySelector('.decrease');
+            const increaseBtn = document.querySelector('.increase');
+            const quantityInput = document.querySelector('.quantity-input');
+            
+            decreaseBtn.addEventListener('click', function() {
+                let currentValue = parseInt(quantityInput.value);
+                if (currentValue > 1) {
+                    quantityInput.value = currentValue - 1;
+                }
+            });
+            
+            increaseBtn.addEventListener('click', function() {
+                let currentValue = parseInt(quantityInput.value);
+                if (currentValue < 10) {
+                    quantityInput.value = currentValue + 1;
+                }
+            });
+            
+            // Tab switching functionality
+            const tabItems = document.querySelectorAll('.tab-item');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all tabs and contents
+                    tabItems.forEach(tab => tab.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to current tab and content
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Wishlist button functionality
+            const wishlistBtn = document.querySelector('.wishlist-btn');
+            wishlistBtn.addEventListener('click', function() {
+                const heartIcon = this.querySelector('i');
+                heartIcon.classList.toggle('far');
+                heartIcon.classList.toggle('fas');
+                heartIcon.classList.toggle('text-danger');
+                
+                if (heartIcon.classList.contains('fas')) {
+                    showNotification('Added to wishlist!');
+                } else {
+                    showNotification('Removed from wishlist!');
+                }
+            });
+            
+            // Add to cart functionality
+            const addToCartBtn = document.querySelector('.add-to-cart-btn');
+            addToCartBtn.addEventListener('click', function() {
+                const quantity = parseInt(quantityInput.value);
+                const productName = document.querySelector('.product-title').textContent;
+                const productPrice = document.querySelector('.product-price').textContent;
+                const productImg = document.getElementById('product-main-image').src;
+                
+                // Add to cart with selected quantity
+                for (let i = 0; i < quantity; i++) {
+                    addToCart({
+                        name: productName,
+                        price: productPrice,
+                        image: productImg,
+                        quantity: 1
+                    });
+                }
+                
+                // Show notification
+                showNotification(`${productName} (${quantity}) added to cart!`);
+                
+                // Update cart count
+                updateCartCount();
+            });
+        });
+        
+        function showNotification(message) {
+            // Create notification element if it doesn't exist
+            let notification = document.querySelector('.product-notification');
+            
+            if (!notification) {
+                notification = document.createElement('div');
+                notification.className = 'product-notification';
+                document.body.appendChild(notification);
+                
+                // Add notification styles
+                const style = document.createElement('style');
+                style.textContent = `
+                    .product-notification {
+                        position: fixed;
+                        bottom: 20px;
+                        right: 20px;
+                        background-color: #3498db;
+                        color: white;
+                        padding: 15px 20px;
+                        border-radius: 5px;
+                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                        transform: translateY(100px);
+                        opacity: 0;
+                        transition: all 0.3s ease;
+                        z-index: 1000;
+                    }
+                    
+                    .product-notification.show {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            // Set notification content
+            notification.textContent = message;
+            
+            // Show notification
+            notification.classList.add('show');
+            
+            // Hide notification after 3 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
